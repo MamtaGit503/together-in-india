@@ -129,7 +129,7 @@ export default function DestinationTab() {
   return (
     <div className="relative bg-[#2E2E2E] h-auto lg:h-[675px] w-full px-4 sm:px-6 md:px-8 py-12 md:py-0">
       {/* Top Tabs */}
-      {/* <div className="relative lg:absolute lg:-top-10 left-0 lg:left-8 flex flex-wrap lg:flex-nowrap justify-center lg:justify-start">
+      <div className="relative lg:absolute lg:-top-10 left-0 lg:left-8 flex flex-wrap lg:flex-nowrap justify-center lg:justify-start">
         {tabs.map((label, i) => {
           const isActive = activeTab === label;
           return (
@@ -144,28 +144,6 @@ export default function DestinationTab() {
                 }`}
             >
               <span className="font-roboto font-semibold text-[12px] sm:text-[14px] md:text-[16px]">
-                {label}
-              </span>
-            </div>
-          );
-        })}
-      </div> */}
-      <div className="relative lg:absolute lg:-top-10 left-0 lg:left-8 w-full flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-center lg:justify-start">
-        {tabs.map((label, i) => {
-          const isActive = activeTab === label;
-          return (
-            <div
-              key={i}
-              onClick={() => setActiveTab(label)}
-              className={`w-full sm:w-auto px-4 sm:px-5 md:px-6 h-12 sm:h-14 md:h-16 flex items-center justify-center border-b sm:border-b-0 sm:border-r border-[#838383] cursor-pointer transition-all duration-200 text-center
-          ${
-            isActive
-              ? "bg-[#2E2E2E] text-white"
-              : "bg-white text-black hover:text-[#DC3545]"
-          }
-        `}
-            >
-              <span className="font-roboto font-semibold text-[14px] sm:text-[14px] md:text-[16px]">
                 {label}
               </span>
             </div>
