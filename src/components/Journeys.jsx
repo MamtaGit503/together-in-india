@@ -140,7 +140,7 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // ✅ using Lucide icons
 import Jaipur from "../assets/images/destinations/jaipur.png";
-import Jodhpur from "../assets/images/destinations/Jodhpur.png";
+import Jodhpur from "../assets/images/destinations/jodhpur.png";
 import udaipur from "../assets/images/destinations/udaipur.png";
 import agra from "../assets/images/destinations/agra.png";
 import delhi from "../assets/images/destinations/delhi.png";
