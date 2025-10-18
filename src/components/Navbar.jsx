@@ -328,6 +328,7 @@ import { assets } from "../assets/assets";
 
 const Navbar = () => {
   const navLinks = [
+    // { name: "ABOUT US", path: "/about-us" },
     { name: "ABOUT US", path: "/" },
     { name: "ADVERTISE WITH US", path: "/" },
     { name: "BUSINESS SITE", path: "/" },
