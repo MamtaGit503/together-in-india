@@ -10,6 +10,12 @@ import Shop from "./pages/Shop";
 import TribesOfIndia from "./pages/TribesOfIndia";
 import KidsSpecial from "./pages/KidsSpecial";
 import AboutUs from "./pages/AboutUs";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CSRPolicy from "./pages/CSRPolicy";
+import BusinessAgreement from "./pages/BusinessAgreement";
+import Disclaimer from "./pages/Disclaimer";
+import Sitemap from "./pages/Sitemap";
 
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
@@ -29,6 +35,12 @@ const App = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/tribes-of-india" element={<TribesOfIndia />} />
           <Route path="/kids-special" element={<KidsSpecial />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          {/* <Route path="/csr-policy" element={<CSRPolicy />} /> */}
+          <Route path="/business-agreement" element={<BusinessAgreement />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/sitemap" element={<Sitemap />} />
         </Routes>
       </div>
     </div>

@@ -322,13 +322,239 @@
 
 // export default Navbar;
 
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import { assets } from "../assets/assets";
+
+// const Navbar = () => {
+//   const navLinks = [
+//     // { name: "ABOUT US", path: "/about-us" },
+//     { name: "ABOUT US", path: "/" },
+//     { name: "ADVERTISE WITH US", path: "/" },
+//     { name: "BUSINESS SITE", path: "/" },
+//   ];
+
+//   const [isScrolled, setIsScrolled] = React.useState(false);
+//   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+//   React.useEffect(() => {
+//     const handleScroll = () => setIsScrolled(window.scrollY > 10);
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   return (
+//     <nav
+//       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+//         isScrolled ? "bg-white/80 backdrop-blur shadow-md" : "bg-transparent"
+//       }`}
+//     >
+//       <div className="w-full mx-auto px-8 shadow-sm">
+//         {/* ---------- TOP ROW (Desktop) ---------- */}
+//         <div className="hidden md:flex items-center justify-end h-14 space-x-6 text-sm border-b border-gray-300">
+//           <button
+//             className={`border px-3 py-1 rounded-full transition ${
+//               isScrolled ? "text-black border-black" : "text-white border-white"
+//             }`}
+//           >
+//             Become a Member
+//           </button>
+
+//           {navLinks.map((link, i) => (
+//             <a
+//               key={i}
+//               href={link.path}
+//               className={`relative font-medium ${
+//                 isScrolled ? "text-gray-800" : "text-white"
+//               } group`}
+//             >
+//               {link.name}
+//               <span
+//                 className={`absolute bottom-[-4px] left-0 h-[2px] w-0 group-hover:w-full transition-all duration-300 ${
+//                   isScrolled ? "bg-gray-800" : "bg-white"
+//                 }`}
+//               />
+//             </a>
+//           ))}
+
+//           <select
+//             className={`bg-transparent cursor-pointer focus:outline-none ${
+//               isScrolled ? "text-gray-800" : "text-white"
+//             }`}
+//             defaultValue="English"
+//           >
+//             <option>English</option>
+//             <option>Hindi</option>
+//           </select>
+//         </div>
+
+//         {/* ---------- BOTTOM ROW (Desktop) ---------- */}
+//         <div className="hidden md:flex items-center justify-between h-14">
+//           {/* Left side */}
+//           <div className="flex items-center space-x-4">
+//             <Link to="/" className="flex items-center space-x-2">
+//               <img
+//                 src={assets.logo}
+//                 alt="logo"
+//                 className={`h-8 ${isScrolled ? "invert opacity-80" : ""}`}
+//               />
+//               <span
+//                 className={`text-lg font-semibold ${
+//                   isScrolled ? "text-gray-900" : "text-white"
+//                 }`}
+//               >
+//                 Together In India
+//               </span>
+//             </Link>
+
+//             <select
+//               className={`bg-transparent cursor-pointer focus:outline-none text-sm ${
+//                 isScrolled ? "text-gray-800" : "text-white"
+//               }`}
+//               defaultValue="Destinations"
+//             >
+//               <option>Destinations</option>
+//               <option>Flights</option>
+//               <option>Hotels</option>
+//               <option>Activities</option>
+//             </select>
+//           </div>
+
+//           {/* Right side */}
+//           <button
+//             className={`text-sm font-medium transition ${
+//               isScrolled ? "text-gray-800" : "text-white"
+//             }`}
+//           >
+//             SIGN IN
+//           </button>
+//         </div>
+
+//         {/* ---------- MOBILE HEADER ---------- */}
+//         <div className="flex md:hidden items-center justify-between h-16">
+//           {/* Logo & Title */}
+//           <Link to="/" className="flex items-center space-x-2">
+//             <img
+//               src={assets.logo}
+//               alt="logo"
+//               className={`h-8 ${isScrolled ? "invert opacity-80" : ""}`}
+//             />
+//             <span
+//               className={`text-lg font-semibold ${
+//                 isScrolled ? "text-gray-900" : "text-white"
+//               }`}
+//             >
+//               Together In India
+//             </span>
+//           </Link>
+
+//           {/* Mobile Menu Button */}
+//           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+//             {isMenuOpen ? (
+//               <svg
+//                 className={`h-7 w-7 ${
+//                   isScrolled ? "text-gray-800" : "text-white"
+//                 }`}
+//                 fill="none"
+//                 stroke="currentColor"
+//                 strokeWidth="2"
+//                 viewBox="0 0 24 24"
+//               >
+//                 <line x1="18" y1="6" x2="6" y2="18" />
+//                 <line x1="6" y1="6" x2="18" y2="18" />
+//               </svg>
+//             ) : (
+//               <svg
+//                 className={`h-7 w-7 ${
+//                   isScrolled ? "text-gray-800" : "text-white"
+//                 }`}
+//                 fill="none"
+//                 stroke="currentColor"
+//                 strokeWidth="2"
+//                 viewBox="0 0 24 24"
+//               >
+//                 <line x1="4" y1="6" x2="20" y2="6" />
+//                 <line x1="4" y1="12" x2="20" y2="12" />
+//                 <line x1="4" y1="18" x2="20" y2="18" />
+//               </svg>
+//             )}
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* ---------- MOBILE MENU ---------- */}
+//       <div
+//         className={`fixed top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-6 transition-transform duration-500 md:hidden ${
+//           isMenuOpen ? "translate-x-0" : "-translate-x-full"
+//         }`}
+//       >
+//         {/* Close Button */}
+//         <button
+//           className="absolute top-4 right-4"
+//           onClick={() => setIsMenuOpen(false)}
+//         >
+//           <svg
+//             className="h-6 w-6"
+//             fill="none"
+//             stroke="currentColor"
+//             strokeWidth="2"
+//             viewBox="0 0 24 24"
+//           >
+//             <line x1="18" y1="6" x2="6" y2="18" />
+//             <line x1="6" y1="6" x2="18" y2="18" />
+//           </svg>
+//         </button>
+
+//         {/* Menu Items */}
+//         {/* <button className="border px-4 py-1 text-sm rounded-full">
+//           Become a Member
+//         </button> */}
+
+//         {navLinks.map((link, i) => (
+//           <a
+//             key={i}
+//             href={link.path}
+//             className="text-gray-800 text-lg"
+//             onClick={() => setIsMenuOpen(false)}
+//           >
+//             {link.name}
+//           </a>
+//         ))}
+
+//         {/* <select
+//           className="border px-4 py-2 rounded text-gray-800"
+//           defaultValue="English"
+//         >
+//           <option>English</option>
+//           <option>Hindi</option>
+//         </select> */}
+
+//         {/* <select
+//           className="border px-4 py-2 rounded text-gray-800"
+//           defaultValue="Destinations"
+//         >
+//           <option>Destinations</option>
+//           <option>Flights</option>
+//           <option>Hotels</option>
+//           <option>Activities</option>
+//         </select> */}
+
+//         <button className="bg-black text-white px-6 py-2 rounded-full">
+//           SIGN IN
+//         </button>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 
 const Navbar = () => {
   const navLinks = [
-    // { name: "ABOUT US", path: "/about-us" },
     { name: "ABOUT US", path: "/" },
     { name: "ADVERTISE WITH US", path: "/" },
     { name: "BUSINESS SITE", path: "/" },
@@ -343,44 +569,43 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Helper variables for conditional styling
+  const textColor = isScrolled ? "text-black" : "text-white";
+  const borderColor = isScrolled ? "border-black" : "border-white";
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isScrolled ? "bg-white/80 backdrop-blur shadow-md" : "bg-transparent"
       }`}
+      role="navigation"
     >
       <div className="w-full mx-auto px-8 shadow-sm">
         {/* ---------- TOP ROW (Desktop) ---------- */}
         <div className="hidden md:flex items-center justify-end h-14 space-x-6 text-sm border-b border-gray-300">
           <button
-            className={`border px-3 py-1 rounded-full transition ${
-              isScrolled ? "text-black border-black" : "text-white border-white"
-            }`}
+            className={`border px-3 py-1 rounded-full transition ${textColor} ${borderColor}`}
           >
             Become a Member
           </button>
 
           {navLinks.map((link, i) => (
-            <a
+            <Link
               key={i}
-              href={link.path}
-              className={`relative font-medium ${
-                isScrolled ? "text-gray-800" : "text-white"
-              } group`}
+              to={link.path}
+              className={`relative font-medium ${textColor} group`}
             >
               {link.name}
               <span
                 className={`absolute bottom-[-4px] left-0 h-[2px] w-0 group-hover:w-full transition-all duration-300 ${
-                  isScrolled ? "bg-gray-800" : "bg-white"
+                  isScrolled ? "bg-black" : "bg-white"
                 }`}
               />
-            </a>
+            </Link>
           ))}
 
           <select
-            className={`bg-transparent cursor-pointer focus:outline-none ${
-              isScrolled ? "text-gray-800" : "text-white"
-            }`}
+            className={`bg-transparent cursor-pointer focus:outline-none ${textColor}`}
             defaultValue="English"
           >
             <option>English</option>
@@ -393,24 +618,15 @@ const Navbar = () => {
           {/* Left side */}
           <div className="flex items-center space-x-4">
             <Link to="/" className="flex items-center space-x-2">
-              <img
-                src={assets.logo}
-                alt="logo"
-                className={`h-8 ${isScrolled ? "invert opacity-80" : ""}`}
-              />
-              <span
-                className={`text-lg font-semibold ${
-                  isScrolled ? "text-gray-900" : "text-white"
-                }`}
-              >
+              {/* Logo stays original color */}
+              <img src={assets.logo} alt="logo" className="h-8" />
+              <span className={`text-lg font-semibold ${textColor}`}>
                 Together In India
               </span>
             </Link>
 
             <select
-              className={`bg-transparent cursor-pointer focus:outline-none text-sm ${
-                isScrolled ? "text-gray-800" : "text-white"
-              }`}
+              className={`bg-transparent cursor-pointer focus:outline-none text-sm ${textColor}`}
               defaultValue="Destinations"
             >
               <option>Destinations</option>
@@ -421,11 +637,7 @@ const Navbar = () => {
           </div>
 
           {/* Right side */}
-          <button
-            className={`text-sm font-medium transition ${
-              isScrolled ? "text-gray-800" : "text-white"
-            }`}
-          >
+          <button className={`text-sm font-medium transition ${textColor}`}>
             SIGN IN
           </button>
         </div>
@@ -434,27 +646,20 @@ const Navbar = () => {
         <div className="flex md:hidden items-center justify-between h-16">
           {/* Logo & Title */}
           <Link to="/" className="flex items-center space-x-2">
-            <img
-              src={assets.logo}
-              alt="logo"
-              className={`h-8 ${isScrolled ? "invert opacity-80" : ""}`}
-            />
-            <span
-              className={`text-lg font-semibold ${
-                isScrolled ? "text-gray-900" : "text-white"
-              }`}
-            >
+            <img src={assets.logo} alt="logo" className="h-8" />
+            <span className={`text-lg font-semibold ${textColor}`}>
               Together In India
             </span>
           </Link>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             {isMenuOpen ? (
               <svg
-                className={`h-7 w-7 ${
-                  isScrolled ? "text-gray-800" : "text-white"
-                }`}
+                className={`h-7 w-7 ${textColor}`}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -465,9 +670,7 @@ const Navbar = () => {
               </svg>
             ) : (
               <svg
-                className={`h-7 w-7 ${
-                  isScrolled ? "text-gray-800" : "text-white"
-                }`}
+                className={`h-7 w-7 ${textColor}`}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -484,17 +687,20 @@ const Navbar = () => {
 
       {/* ---------- MOBILE MENU ---------- */}
       <div
-        className={`fixed top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-6 transition-transform duration-500 md:hidden ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-0 bg-white flex flex-col items-center justify-center space-y-6 transition-transform duration-500 md:hidden ${
+          isMenuOpen
+            ? "translate-x-0 opacity-100"
+            : "-translate-x-full opacity-0"
         }`}
       >
         {/* Close Button */}
         <button
           className="absolute top-4 right-4"
           onClick={() => setIsMenuOpen(false)}
+          aria-label="Close menu"
         >
           <svg
-            className="h-6 w-6"
+            className="h-6 w-6 text-gray-800"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -506,38 +712,16 @@ const Navbar = () => {
         </button>
 
         {/* Menu Items */}
-        {/* <button className="border px-4 py-1 text-sm rounded-full">
-          Become a Member
-        </button> */}
-
         {navLinks.map((link, i) => (
-          <a
+          <Link
             key={i}
-            href={link.path}
+            to={link.path}
             className="text-gray-800 text-lg"
             onClick={() => setIsMenuOpen(false)}
           >
             {link.name}
-          </a>
+          </Link>
         ))}
-
-        {/* <select
-          className="border px-4 py-2 rounded text-gray-800"
-          defaultValue="English"
-        >
-          <option>English</option>
-          <option>Hindi</option>
-        </select> */}
-
-        {/* <select
-          className="border px-4 py-2 rounded text-gray-800"
-          defaultValue="Destinations"
-        >
-          <option>Destinations</option>
-          <option>Flights</option>
-          <option>Hotels</option>
-          <option>Activities</option>
-        </select> */}
 
         <button className="bg-black text-white px-6 py-2 rounded-full">
           SIGN IN
