@@ -32,8 +32,21 @@ const sections = [
 const BusinessAgreement = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const toggleSection = (index) =>
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+  const toggleSection = (index) => {
+    setActiveIndex((prevIndex) => {
+      const newIndex = prevIndex === index ? null : index;
+
+      // Scroll to the top of the page when opening a section
+      if (newIndex !== null) {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", // Scroll smoothly to the top
+        });
+      }
+
+      return newIndex;
+    });
+  };
 
   return (
     <div className="relative w-full min-h-screen bg-white font-roboto flex flex-col">
@@ -47,7 +60,7 @@ const BusinessAgreement = () => {
       {/* Gray Background */}
       <main className="flex-1 w-full bg-[#E2E2E2] py-12 px-[20px] sm:px-[30px]">
         {/* White Content Container */}
-        <section className="max-w-[1380px] mx-auto bg-white shadow-md  p-[20px] sm:p-[30px] flex flex-col divide-y divide-black/10 animate-slideUp">
+        <section className="max-w-[1380px] mx-auto bg-white shadow-md p-[20px] sm:p-[30px] flex flex-col divide-y divide-black/10 animate-slideUp">
           {sections.map((section, index) => {
             const isActive = activeIndex === index;
             return (

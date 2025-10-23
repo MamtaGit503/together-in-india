@@ -305,6 +305,7 @@ const SitemapHeader = () => (
       </div>
       <div className="flex items-center gap-1">
         <div className="text-gray-500 text-xs">Home</div>
+        <span className="text-black text-sm">{">"}</span>
         <div className="w-[3.5px] h-[7px] rotate-180 outline outline-gray-500 outline-offset-[-0.5px]" />
         <div className="text-gray-500 text-xs">News & Announcement</div>
       </div>
