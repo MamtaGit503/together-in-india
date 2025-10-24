@@ -8,6 +8,10 @@ const sections = [
     content: `These Terms and Conditions ("Terms") govern the use of Together in India, including all services and features provided through the Website. By accessing or using the Website, you agree to be bound by these Terms in their entirety.`,
   },
   {
+    title: "Applicability",
+    content: `These Terms and Conditions ("Terms") govern the use of Together in India, including all services and features provided through the Website. By accessing or using the Website, you agree to be bound by these Terms in their entirety.`,
+  },
+  {
     title: "Eligibility to Use",
     content: `Users must be at least 18 years of age or use the website under parental guidance. You are responsible for ensuring compliance with all applicable laws while using the Website.`,
   },
