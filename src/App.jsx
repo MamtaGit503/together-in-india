@@ -16,6 +16,9 @@ import CSRPolicy from "./pages/CSRPolicy";
 import BusinessAgreement from "./pages/BusinessAgreement";
 import Disclaimer from "./pages/Disclaimer";
 import Sitemap from "./pages/Sitemap";
+import IndiaCountry from "./pages/IndiaCountry";
+import ThingsToDoDomestic from "./pages/ThingsToDoDomestic";
+import Attraction from "./pages/Attraction";
 
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
@@ -41,6 +44,9 @@ const App = () => {
           <Route path="/business-agreement" element={<BusinessAgreement />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/sitemap" element={<Sitemap />} />
+          <Route path="/india-country" element={<IndiaCountry />} />
+          <Route path="/things-to-do-domestic" element={<ThingsToDoDomestic />} />
+          <Route path="/attraction" element={<Attraction />} />
         </Routes>
       </div>
     </div>
