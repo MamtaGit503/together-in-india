@@ -19,6 +19,8 @@ import Sitemap from "./pages/Sitemap";
 import IndiaCountry from "./pages/IndiaCountry";
 import ThingsToDoDomestic from "./pages/ThingsToDoDomestic";
 import Attraction from "./pages/Attraction";
+import LoginTravelPartnerAdvertise from "./pages/LoginTravelPartnerAdvertise";
+import AdvertiseWithUsForm from "./pages/AdvertiseWithUsForm";
 
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
@@ -32,7 +34,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/destinations" element={<Destinations />} />
-          <Route path="/hotels" element={<Hotels />} />
+          <Route path="/hotels" element={<Hotels />} /> 
           <Route path="/things-to-do" element={<ThingsToDo />} />
           <Route path="/eat-drink" element={<EatDrink />} />
           <Route path="/shop" element={<Shop />} />
@@ -47,6 +49,8 @@ const App = () => {
           <Route path="/india-country" element={<IndiaCountry />} />
           <Route path="/things-to-do-domestic" element={<ThingsToDoDomestic />} />
           <Route path="/attraction" element={<Attraction />} />
+          <Route path="/login-advertise" element={<LoginTravelPartnerAdvertise />} />
+          <Route path="/login-advertise-form" element={<AdvertiseWithUsForm />} />
         </Routes>
       </div>
     </div>

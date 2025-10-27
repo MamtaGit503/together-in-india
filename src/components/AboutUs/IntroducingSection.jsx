@@ -1,12 +1,13 @@
 import React from "react";
+import T from "../../assets/images/t.png";
 
 const IntroducingSection = () => {
   return (
-    <section className="flex flex-col items-center justify-start gap-24 py-16 px-4">
+    <section className="flex flex-col items-center gap-24">
       {/* Top Row */}
-      <div className="w-full max-w-[1380px] flex flex-col md:flex-row justify-between items-start gap-10">
+      <div className="w-full flex flex-col md:flex-row justify-between items-start">
         {/* Left Content */}
-        <div className="flex flex-col gap-3 max-w-[828px]">
+        <div className="flex flex-col gap-3 max-w-[60%]">
           <h4 className="text-[#DC3545] text-[20px] font-bold uppercase">
             Introducing
           </h4>
@@ -31,7 +32,7 @@ const IntroducingSection = () => {
               your marketing and operational challenges with confidence.
             </p>
 
-            <button className="bg-[#DC3545] text-white text-sm font-bold uppercase px-5 py-3 rounded-md w-fit hover:bg-[#b42a38] transition-all">
+            <button className="bg-[#DC3545] text-white text-sm font-bold uppercase px-5 py-3 w-fit hover:bg-[#b42a38] transition-all">
               Get In Touch
             </button>
           </div>
@@ -40,13 +41,24 @@ const IntroducingSection = () => {
         {/* Right Image Box */}
         <div className="relative w-[486px] h-[486px] bg-white rounded-2xl shadow-lg overflow-hidden">
           <div className="absolute left-[153px] top-[54px]">
-            <img
-              src="https://placehold.co/180x344"
-              alt="Introducing"
-              className="rounded-lg"
-            />
+            <img src={T} alt="Introducing" className="rounded-lg" />
             <div className="absolute left-[70px] top-[153px] w-10 h-10 rounded-full shadow-lg bg-white flex items-center justify-center">
-              <div className="w-10 h-10 bg-[#DC3545] rounded-full" />
+              <div className="w-10 h-10 bg-[#DC3545] rounded-full flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-play-icon lucide-play text-white"
+                >
+                  <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+                </svg>
+              </div>
             </div>
           </div>
           <p className="absolute bottom-6 left-[123px] text-[#DC3545] text-[16px] font-['Indie_Flower']">
@@ -61,60 +73,6 @@ const IntroducingSection = () => {
         <br />
         powered by strong partnerships.
       </p>
-
-      {/* Logos/Icons Row */}
-      <div className="flex flex-wrap justify-center items-center gap-9">
-        {/* Vector placeholders */}
-        <div className="w-[27px] h-[32px] bg-[#202120]" />
-        <div className="w-[13px] h-[12px] bg-[#202120]" />
-        <div className="w-[11px] h-[12px] bg-[#202120]" />
-        <div className="w-[10px] h-[12px] bg-[#202120]" />
-        <div className="w-[12px] h-[12px] bg-[#202120]" />
-        <div className="w-[14px] h-[12px] bg-[#202120]" />
-        <div className="w-[20px] h-[12px] bg-[#202120]" />
-        <div className="w-[13px] h-[12px] bg-[#202120]" />
-        <div className="w-[12px] h-[12px] bg-[#202120]" />
-        <div className="w-[9px] h-[12px] bg-[#202120]" />
-        <div className="w-[13px] h-[12px] bg-[#202120]" />
-        <div className="w-[25px] h-[13px] bg-[#A5A5A5]" />
-
-        {/* Brand placeholders */}
-        <img
-          src="https://placehold.co/115x52"
-          alt="brand"
-          className="h-[52px]"
-        />
-        <img
-          src="https://placehold.co/104x68"
-          alt="brand"
-          className="h-[68px]"
-        />
-        <img
-          src="https://placehold.co/162x49"
-          alt="brand"
-          className="h-[49px]"
-        />
-        <img
-          src="https://placehold.co/71x70"
-          alt="brand"
-          className="h-[70px]"
-        />
-        <img
-          src="https://placehold.co/77x40"
-          alt="brand"
-          className="h-[40px]"
-        />
-        <img
-          src="https://placehold.co/101x51"
-          alt="brand"
-          className="h-[51px]"
-        />
-        <img
-          src="https://placehold.co/95x60"
-          alt="brand"
-          className="h-[60px]"
-        />
-      </div>
     </section>
   );
 };
